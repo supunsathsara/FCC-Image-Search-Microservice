@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Search Microservice</title>
+    <link href="/public/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Image Search Microservice</h1>
+    <div>
+      <p>
+        This is a freeCodeCamp API project. It allows you to search for images
+        using the <a href="https://www.pexels.com">pexels API</a>.
+      </p>
+      <p>
+        To search for images, make a GET request to <br />
+        <code><a href="/query/cats">/query/</a></code> <br />
+        followed by your search query. <br />
+      </p>
+      <p>
+        To get the 10 most recent search queries, make a GET request to <br />
+        <code><a href="/recent">/recent</a></code>
+      </p>
+
+      <form>
+        <h2>Create a Query</h2>
+        <label for="query">Query</label>
+        <input type="text" id="query" name="query" placeholder="cat" />
+        <label for="size">Size</label>
+        <select id="size" name="size">
+          <option value="all" default>All</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+        <label for="page">Page:</label>
+        <input type="text" value="1" id="page" name="page" />
+        <input type="submit" value="Create" />
+      </form>
+      <div id="results"></div>
+    </div>
+    <footer>
+      <hr />
+      <p>
+        By
+        <a href="https://www.supunsathsara.com">Supun Sathsara</a>
+        <br />for freeCodeCamp Back End Development and APIs Projects <br />
+      </p>
+    </footer>
+    <script>
+      const form = document.querySelector('form');
+      const results = document.querySelector('#results');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        query = document.querySelector('#query').value;
+        size = document.querySelector('#size').value;
+        page = document.querySelector('#page').value;
+        size = size == 'all' ? '' : `&size=${size}`;
+        url = `/query/${query}?${size}&page=${page}`;
+        //add url to result div
+        results.innerHTML = `<a href="${url}">${url}</a>`;
+      });
+    </script>
+  </body>
+</html>

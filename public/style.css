@@ -1,0 +1,43 @@
+body{
+    background-color: #fffc49;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+code{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: #333;
+    background-color: #adadad;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+div{
+    margin: 12px 12px 20px 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+
+}
+
+footer{
+    text-align: center;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    /*make it sticky to bottom*/
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
